@@ -7,10 +7,11 @@ struct AddMovieScreen: View {
     @Environment(MoviesVM.self) private var vm
         
     var body: some View {
+        @Bindable var bindableVM = vm
+        // This view is observing changes of vm in One Way (Read-Only)
+        // with bindableVM we can changes values from here (Read-Write)
+
         Form {
-            @Bindable var bindableVM = vm
-            // This view is observing changes of vm in One Way (Read-Only)
-            // with bindableVM we can changes values from here (Read-Write)
             VStack(alignment: .leading, spacing: 8) {
                 Text("Title").font(.headline)
                 TextField("Title", text: $bindableVM.title)

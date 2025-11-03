@@ -10,8 +10,13 @@ final class MoviesVM {
     var title: String = ""
     var year: Int
     let years: [Int]
-    var isShowingAddMovieScreen = false
-    
+    var movieToUpdate: Movie?
+    var isShowingAddMovieScreen = false {
+        willSet {
+            if newValue { setDefaultValues() }
+        }
+    }
+
     private let minYear = 1850
     private let maxYear = Calendar.current.component(.year, from: .now)
     private let modelCtx: ModelContext
@@ -22,11 +27,10 @@ final class MoviesVM {
         year = maxYear - 5
     }
     
-    func setDefaultValues() {
+    private func setDefaultValues() {
         title = ""
         year = maxYear - 5
     }
-    
 
     func isAddMovieFormValid() -> Bool {
         if title.trimmingCharacters(in: .whitespaces).isEmpty {
@@ -37,10 +41,23 @@ final class MoviesVM {
     
     // MARK: - DB methods
     func addMovie() {
+        let title = title.trimmingCharacters(in: .whitespaces)
         let newMovie = Movie(title: title, year: year)
         modelCtx.insert(newMovie)
         save()
         isShowingAddMovieScreen = false
+    }
+    
+    func deleteMovie(_ movie: Movie) {
+        modelCtx.delete(movie)
+        save()
+    }
+    
+    func updateMovie() {
+        guard let movie = movieToUpdate else { return }
+        movie.title = title.trimmingCharacters(in: .whitespaces)
+        movie.year = year
+        save()
     }
     
     private func save() {
@@ -50,6 +67,10 @@ final class MoviesVM {
         } catch {
             print(Self.self, #function, "Error saving context: \(error)")
         }
+    }
+    
+    private func debug_printMovie(_ movie: Movie) {
+        print(#function, "Title: \(title), Year: \(year)")
     }
 
 }

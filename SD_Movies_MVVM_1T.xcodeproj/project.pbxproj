@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C5D1C452EB9567600482542 /* EditMovieScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D1C442EB9567600482542 /* EditMovieScreen.swift */; };
 		0C9878B32EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878B22EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift */; };
 		0C9878B52EB902C30096B4F6 /* MovieListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878B42EB902C30096B4F6 /* MovieListScreen.swift */; };
 		0C9878B72EB902C50096B4F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C9878B62EB902C50096B4F6 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C5D1C442EB9567600482542 /* EditMovieScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMovieScreen.swift; sourceTree = "<group>"; };
 		0C9878AF2EB902C30096B4F6 /* SD_Movies_MVVM_1T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SD_Movies_MVVM_1T.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9878B22EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SD_Movies_MVVM_1TApp.swift; sourceTree = "<group>"; };
 		0C9878B42EB902C30096B4F6 /* MovieListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListScreen.swift; sourceTree = "<group>"; };
@@ -44,6 +46,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C5D1C462EB9572300482542 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0C9878B42EB902C30096B4F6 /* MovieListScreen.swift */,
+				0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */,
+				0C5D1C442EB9567600482542 /* EditMovieScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		0C9878A62EB902C30096B4F6 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				0C9878B22EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift */,
-				0C9878B42EB902C30096B4F6 /* MovieListScreen.swift */,
-				0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */,
+				0C5D1C462EB9572300482542 /* Screens */,
 				0C9878C72EB9083A0096B4F6 /* MoviesVM.swift */,
 				0C9878C32EB9050E0096B4F6 /* Movie.swift */,
 				0C9878CA2EB935FF0096B4F6 /* SDProvider.swift */,
@@ -162,6 +173,7 @@
 				0C9878B52EB902C30096B4F6 /* MovieListScreen.swift in Sources */,
 				0C9878B32EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift in Sources */,
 				0C9878CD2EB937D40096B4F6 /* ExtensionsForPreviews.swift in Sources */,
+				0C5D1C452EB9567600482542 /* EditMovieScreen.swift in Sources */,
 				0C9878C42EB9050E0096B4F6 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

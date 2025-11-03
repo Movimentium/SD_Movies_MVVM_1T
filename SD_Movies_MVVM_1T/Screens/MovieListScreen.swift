@@ -12,15 +12,21 @@ struct MovieListScreen: View {
         @Bindable var bindableVM = vm
         
         List {
-            ForEach(movies) { movie in  //TODO: navlink to edit. Delete
-                HStack {
-                    Text(movie.title)
-                    Spacer() 
-                    Text(movie.year.description) // No miles separators
+            ForEach(movies) { movie in  //TODO: navlink to edit
+                NavigationLink(value: movie){
+                    HStack {
+                        Text(movie.title)
+                        Spacer() 
+                        Text(movie.year.description) // No miles separators
+                    }
                 }
             }
+            .onDelete { $0.forEach { vm.deleteMovie(movies[$0]) } }
         }
         .navigationTitle("Movies")
+        .navigationDestination(for: Movie.self) { movie in
+            EditMovieScreen(movie: movie)
+        }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add Movie") {

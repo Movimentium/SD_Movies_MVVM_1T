@@ -11,9 +11,7 @@ extension SDProvider {
         let config = ModelConfiguration(isStoredInMemoryOnly: true) // In memory <--
         let container = try! ModelContainer(for: schema, configurations: config)
         
-        [Movie(title: "Batman", year: 1989),
-         Movie(title: "Memento", year: 2000)]
-            .forEach { container.mainContext.insert($0) }
+        Movie.someMovies.forEach { container.mainContext.insert($0) }
         try! container.mainContext.save()
         
         return container
@@ -32,4 +30,13 @@ extension ModelContainer {
     static let fakeContainer: ModelContainer = {
         SDProvider.previewMContainer
     }()
+}
+
+extension Movie {
+    
+    static let someMovies: [Movie] = [
+        .init(title: "Batman", year: 1989),
+        .init(title: "Memento", year: 2000),
+    ]
+
 }
