@@ -1,10 +1,6 @@
-//
 //  ContentView.swift
 //  SD_Movies_MVVM_1T
-//
 //  Created by Miguel Gallego on 3/11/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
