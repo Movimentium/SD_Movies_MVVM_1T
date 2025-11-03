@@ -64,7 +64,7 @@
 				0C9878B42EB902C30096B4F6 /* ContentView.swift */,
 				0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */,
 				0C9878C72EB9083A0096B4F6 /* MoviesVM.swift */,
-				0C9878C22EB904DC0096B4F6 /* Model */,
+				0C9878C32EB9050E0096B4F6 /* Movie.swift */,
 				0C9878B62EB902C50096B4F6 /* Assets.xcassets */,
 				0C9878B82EB902C50096B4F6 /* Preview Content */,
 			);
@@ -77,14 +77,6 @@
 				0C9878B92EB902C50096B4F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		0C9878C22EB904DC0096B4F6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0C9878C32EB9050E0096B4F6 /* Movie.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
