@@ -39,6 +39,7 @@ struct AddMovieScreen: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     vm.addMovie()
+                    dismiss()
                 }
                 .disabled(!vm.isAddMovieFormValid())
             }
@@ -52,5 +53,6 @@ struct AddMovieScreen: View {
     NavigationStack {
         AddMovieScreen()
     }
-    .environment(MoviesVM())
+    .modelContainer(SDProvider.previewMContainer)
+    .environment(MoviesVM(modelCtx: SDProvider.previewMContainer.mainContext))
 }

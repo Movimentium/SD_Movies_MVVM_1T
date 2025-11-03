@@ -4,14 +4,17 @@
 import Foundation
 import SwiftData
 
+@MainActor
 class SDProvider {
     let modelContainer: ModelContainer
+    let modelCtx: ModelContext
     
     init() {
         let schema = Schema([Movie.self])
         let config = ModelConfiguration("SDMoviesDB", schema: schema)
         do {
             modelContainer = try ModelContainer(for: schema, configurations: config)
+            modelCtx = modelContainer.mainContext
         } catch {
             fatalError("\(Self.self) \(#function) ModelContainer could NOT be initialized: \(error)")
         }

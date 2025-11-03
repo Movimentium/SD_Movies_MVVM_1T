@@ -12,7 +12,7 @@ struct SD_Movies_MVVM_1TApp: App {
     
     init() {
         modelContainer = SDProvider().modelContainer
-        vm = MoviesVM(modelContainer: self.modelContainer)
+        vm = MoviesVM(modelCtx: modelContainer.mainContext)
     }
     
     var body: some Scene {

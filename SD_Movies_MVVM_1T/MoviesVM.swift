@@ -5,15 +5,18 @@ import Foundation
 import Observation
 import SwiftData
 
-@Observable final class MoviesVM {
+@Observable @MainActor
+final class MoviesVM {
     var title: String = ""
     var year: Int
     let years: [Int]
     
     private let minYear = 1850
     private let maxYear = Calendar.current.component(.year, from: .now)
+    private let modelCtx: ModelContext
 
-    init(modelContainer: ModelContainer) {
+    init(modelCtx: ModelContext) {
+        self.modelCtx = modelCtx
         years = Array(minYear...maxYear)
         year = maxYear - 5
     }
@@ -34,7 +37,17 @@ import SwiftData
     // MARK: - DB methods
     func addMovie() {
         let newMovie = Movie(title: title, year: year)
-        
+        modelCtx.insert(newMovie)
+        save()
+    }
+    
+    private func save() {
+        do {
+            try modelCtx.save()
+            print(Self.self, #function, "OK")
+        } catch {
+            print(Self.self, #function, "Error saving context: \(error)")
+        }
     }
 
 }
