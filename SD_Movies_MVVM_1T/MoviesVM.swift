@@ -10,6 +10,7 @@ final class MoviesVM {
     var title: String = ""
     var year: Int
     let years: [Int]
+    var isShowingAddMovieScreen = false
     
     private let minYear = 1850
     private let maxYear = Calendar.current.component(.year, from: .now)
@@ -39,6 +40,7 @@ final class MoviesVM {
         let newMovie = Movie(title: title, year: year)
         modelCtx.insert(newMovie)
         save()
+        isShowingAddMovieScreen = false
     }
     
     private func save() {

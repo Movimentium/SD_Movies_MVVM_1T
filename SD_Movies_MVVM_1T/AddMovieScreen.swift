@@ -5,7 +5,6 @@ import SwiftUI
 
 struct AddMovieScreen: View {
     @Environment(MoviesVM.self) private var vm
-    @Environment(\.dismiss) private var dismiss
         
     var body: some View {
         Form {
@@ -20,7 +19,7 @@ struct AddMovieScreen: View {
                 Text("Year").font(.headline)
                 Picker("Year", selection: $bindableVM.year) {
                     ForEach(vm.years, id: \.self) { year in
-                        Text("\(year)")
+                        Text(year.description) // No miles separators
                             .tag(year)
                     }
                 }
@@ -31,7 +30,7 @@ struct AddMovieScreen: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    dismiss()
+                    vm.isShowingAddMovieScreen = false
                 } label: {
                     Image(systemName: "xmark")
                 }
@@ -39,7 +38,6 @@ struct AddMovieScreen: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Save") {
                     vm.addMovie()
-                    dismiss()
                 }
                 .disabled(!vm.isAddMovieFormValid())
             }
@@ -53,6 +51,6 @@ struct AddMovieScreen: View {
     NavigationStack {
         AddMovieScreen()
     }
-    .modelContainer(SDProvider.previewMContainer)
-    .environment(MoviesVM(modelCtx: SDProvider.previewMContainer.mainContext))
+    .modelContainer(.fakeContainer)
+    .environment(MoviesVM(modelCtx: .fakeModelContext))
 }

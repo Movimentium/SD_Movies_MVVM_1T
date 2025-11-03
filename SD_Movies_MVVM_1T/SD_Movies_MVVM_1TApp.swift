@@ -18,7 +18,7 @@ struct SD_Movies_MVVM_1TApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                AddMovieScreen()
+                MovieListScreen()
             }
         }
         .modelContainer(modelContainer)
