@@ -15,6 +15,8 @@
 		0C9878C42EB9050E0096B4F6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878C32EB9050E0096B4F6 /* Movie.swift */; };
 		0C9878C62EB907110096B4F6 /* AddMovieScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */; };
 		0C9878C82EB9083A0096B4F6 /* MoviesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878C72EB9083A0096B4F6 /* MoviesVM.swift */; };
+		0C9878CB2EB935FF0096B4F6 /* SDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878CA2EB935FF0096B4F6 /* SDProvider.swift */; };
+		0C9878CD2EB937D40096B4F6 /* SDProvider_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9878CC2EB937D40096B4F6 /* SDProvider_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		0C9878C32EB9050E0096B4F6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieScreen.swift; sourceTree = "<group>"; };
 		0C9878C72EB9083A0096B4F6 /* MoviesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVM.swift; sourceTree = "<group>"; };
+		0C9878CA2EB935FF0096B4F6 /* SDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDProvider.swift; sourceTree = "<group>"; };
+		0C9878CC2EB937D40096B4F6 /* SDProvider_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDProvider_Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				0C9878C52EB907110096B4F6 /* AddMovieScreen.swift */,
 				0C9878C72EB9083A0096B4F6 /* MoviesVM.swift */,
 				0C9878C32EB9050E0096B4F6 /* Movie.swift */,
+				0C9878CA2EB935FF0096B4F6 /* SDProvider.swift */,
 				0C9878B62EB902C50096B4F6 /* Assets.xcassets */,
 				0C9878B82EB902C50096B4F6 /* Preview Content */,
 			);
@@ -74,6 +79,7 @@
 		0C9878B82EB902C50096B4F6 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				0C9878CC2EB937D40096B4F6 /* SDProvider_Extension.swift */,
 				0C9878B92EB902C50096B4F6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -151,9 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C9878C82EB9083A0096B4F6 /* MoviesVM.swift in Sources */,
+				0C9878CB2EB935FF0096B4F6 /* SDProvider.swift in Sources */,
 				0C9878C62EB907110096B4F6 /* AddMovieScreen.swift in Sources */,
 				0C9878B52EB902C30096B4F6 /* ContentView.swift in Sources */,
 				0C9878B32EB902C30096B4F6 /* SD_Movies_MVVM_1TApp.swift in Sources */,
+				0C9878CD2EB937D40096B4F6 /* SDProvider_Extension.swift in Sources */,
 				0C9878C42EB9050E0096B4F6 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
