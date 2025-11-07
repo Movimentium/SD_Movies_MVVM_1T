@@ -12,12 +12,12 @@ struct MovieListScreen: View {
         @Bindable var bindableVM = vm
         
         List {
-            ForEach(movies) { movie in  //TODO: navlink to edit
+            ForEach(movies) { movie in 
                 NavigationLink(value: movie){
                     HStack {
                         Text(movie.title)
                         Spacer() 
-                        Text(movie.year.description) // No miles separators
+                        Text(movie.year.description) // ZTip No miles separators
                     }
                 }
             }
