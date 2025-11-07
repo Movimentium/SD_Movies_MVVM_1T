@@ -20,7 +20,7 @@ struct AddMovieScreen: View {
                 Text("Year").font(.headline)
                 Picker("Year", selection: $bindableVM.year) {
                     ForEach(vm.years, id: \.self) { year in
-                        Text(year.description) // No miles separators
+                        Text(year.description) // ZTip No miles separators
                             .tag(year)
                     }
                 }
