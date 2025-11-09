@@ -20,16 +20,12 @@ extension SDProvider {
 
 extension ModelContext {
     @MainActor
-    static let fakeModelContext: ModelContext = {
-        SDProvider.previewMContainer.mainContext
-    }()
+    static let fakeModelContext: ModelContext = SDProvider.previewMContainer.mainContext
 }
 
 extension ModelContainer {
     @MainActor
-    static let fakeContainer: ModelContainer = {
-        SDProvider.previewMContainer
-    }()
+    static let fakeContainer: ModelContainer =  SDProvider.previewMContainer
 }
 
 extension Movie {
